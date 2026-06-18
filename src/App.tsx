@@ -21,6 +21,7 @@ const initialData: ResumeData = {
   experience: [],
   skills: [],
   projects: [],
+  certificates: [],
 };
 
 export default function App() {

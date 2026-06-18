@@ -42,10 +42,19 @@ export interface Project {
   link: string;
 }
 
+export interface Certificate {
+  id: string;
+  name: string;
+  issuer: string;
+  link: string;
+  image: string;
+}
+
 export interface ResumeData {
   personal: Personal;
   education: Education[];
   experience: Experience[];
   skills: Skill[];
   projects: Project[];
+  certificates: Certificate[];
 }

@@ -4,6 +4,7 @@ import EducationSection from './EducationSection';
 import ExperienceSection from './ExperienceSection';
 import SkillsSection from './SkillsSection';
 import ProjectsSection from './ProjectsSection';
+import CertificatesSection from './CertificatesSection';
 
 interface Props {
   data: ResumeData;
@@ -23,6 +24,7 @@ export default function ResumeForm({ data, onChange }: Props) {
       <ExperienceSection data={data.experience} onChange={v => update('experience', v)} />
       <SkillsSection data={data.skills} onChange={v => update('skills', v)} />
       <ProjectsSection data={data.projects} onChange={v => update('projects', v)} />
+      <CertificatesSection data={data.certificates} onChange={v => update('certificates', v)} />
     </div>
   );
 }

@@ -5,7 +5,7 @@ interface Props {
 }
 
 export default function ResumePreview({ data }: Props) {
-  const { personal, education, experience, skills, projects } = data;
+  const { personal, education, experience, skills, projects, certificates } = data;
 
   return (
     <div className="preview-panel">
@@ -85,6 +85,22 @@ export default function ResumePreview({ data }: Props) {
                 </div>
                 {proj.technologies && <div className="item-sub">{proj.technologies}</div>}
                 {proj.description && <p className="item-desc">{proj.description}</p>}
+              </div>
+            ))}
+          </section>
+        )}
+
+        {certificates.length > 0 && certificates.some(c => c.name) && (
+          <section>
+            <h3>Certificates</h3>
+            {certificates.filter(c => c.name).map(cert => (
+              <div key={cert.id} className="resume-item">
+                <div className="item-header">
+                  <strong>{cert.name}</strong>
+                  {cert.link && <a href={cert.link} target="_blank" rel="noreferrer">View Certificate</a>}
+                </div>
+                {cert.issuer && <div className="item-sub">{cert.issuer}</div>}
+                {cert.image && <img src={cert.image} alt={cert.name} className="cert-image-preview" />}
               </div>
             ))}
           </section>
